@@ -12,11 +12,11 @@ echo "==> Building ${PDF}"
 xelatex -interaction=nonstopmode "${SRC}"
 
 echo "==> Building long-edge booklet"
-pdfbook2 --paper=letterpaper "${PDF}"
+pdfbook2 --paper=letterpaper --no-crop "${PDF}"
 mv "${BOOK}" "${LONG}"
 
 echo "==> Building short-edge booklet"
-pdfbook2 --paper=letterpaper --short-edge "${PDF}"
+pdfbook2 --paper=letterpaper --short-edge --no-crop "${PDF}"
 mv "${BOOK}" "${SHORT}"
 
 echo ""
